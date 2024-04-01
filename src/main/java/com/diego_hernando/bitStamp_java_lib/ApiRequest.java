@@ -143,6 +143,10 @@ public class ApiRequest {
 		return privateOperation(String.format(privateOperations.BALANCE,currency.toString()), key, signature, nonce);
 	}
 	
+	public String privateGetFees(String key, String signature, long nonce, BitStampCurrencyPairs currency) throws IOException, BadResponseException {
+		return privateOperation(String.format(privateOperations.FEES,currency.toString()), key, signature, nonce);
+	}
+	
 	public String privateGetTransactions(String key,String signature, long nonce) throws IOException, BadResponseException {
 		return privateOperation(privateOperations.USER_TRANSACTIONS_ALL, key, signature, nonce);
 	}
@@ -277,6 +281,9 @@ public class ApiRequest {
 		
 		//sell/market/{currency_pair}/
 		private final String SELL_MARKET_ORDER="v2/sell/market/%s/";
+		
+		//fees/trading/{market_symbol}/
+		private final String FEES="v2/fees/trading/%s/";
 		
 		
 		
