@@ -67,6 +67,12 @@ public class BitStampAPI {
 		return new ApiRequest().privateGetBalance(key, signature, nonce,currency);
 	}
 	
+	public String getFees(BitStampCurrencyPairs currency) throws IOException, BadResponseException {
+		long nonce=new Date().getTime();
+		String signature=getSignature(nonce);
+		return new ApiRequest().privateGetFees(key, signature, nonce, currency);
+	}
+	
 	public String getMyTransactions() throws IOException, BadResponseException {
 		long nonce=new Date().getTime();
 		String signature=getSignature(nonce);
