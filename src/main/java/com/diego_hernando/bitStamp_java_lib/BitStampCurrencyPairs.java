@@ -189,7 +189,8 @@ public enum BitStampCurrencyPairs {
 	TRACUSD("tracusd"),
 	TRACEUR("traceur"),
 	WECANUSD("wecanusd"),
-	WECANEUR("wecaneur");
+	WECANEUR("wecaneur"),
+	PEPEEUR("pepeeur");
 	
 	
 	private String currencyPair;
